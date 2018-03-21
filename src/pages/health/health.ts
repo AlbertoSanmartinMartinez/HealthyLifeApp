@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-health',
+  templateUrl: 'health.html'
 })
-export class ContactPage {
+export class HealthPage {
 
   constructor(public navCtrl: NavController) {
 
   }
-
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HealthPage');
+  }
 }

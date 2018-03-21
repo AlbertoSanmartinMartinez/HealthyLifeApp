@@ -4,9 +4,13 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+
+import { SportPage } from '../pages/sport/sport';
+import { NutritionPage } from '../pages/nutrition/nutrition';
+import { HealthPage } from '../pages/health/health';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,10 +18,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SportPage,
+    HealthPage,
+    NutritionPage
   ],
   imports: [
     BrowserModule,
@@ -26,10 +32,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SportPage,
+    HealthPage,
+    NutritionPage
   ],
   providers: [
     StatusBar,
