@@ -1,19 +1,29 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-
-import { LoginPage } from './login';
-import { RegisterPage } from './register';
+import { AccessPage } from './access';
+import { LoginPage } from './login/login';
+import { RegisterPage } from './register/register';
 
 @NgModule({
   declarations: [
+    AccessPage,
     LoginPage,
     RegisterPage
   ],
   imports: [
-    IonicPageModule.forChild(LoginPage),
+    IonicPageModule.forChild(AccessPage),
+  ],
+  entryComponents: [
+    LoginPage,
+    RegisterPage
   ],
   exports: [
-    LoginPage
+    AccessPage.
+    LoginPage,
+    RegisterPage
+  ],
+  providers: [
+
   ]
 })
 

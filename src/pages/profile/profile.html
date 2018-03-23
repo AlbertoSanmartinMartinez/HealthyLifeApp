@@ -8,48 +8,31 @@
 
 <ion-content padding>
   <ion-list>
-    <!--<ion-card>-->
-      <button ion-button [navPush]="pushPage" [navParams]="navParams">
+    <button ion-item (click)="goToPage('access')">
       <ion-card-header>
         Acceso
-        <ion-card-content>
-          <!--link a la pagina-->
-        </ion-card-content>
       </ion-card-header>
     </button>
-    <!--</ion-card>-->
-    <ion-card>
+    <button ion-item (click)="goToPage('profile')">
       <ion-card-header>
         Información Personal
-        <ion-card-content>
-          <!--link a la pagina-->
-        </ion-card-content>
       </ion-card-header>
-    </ion-card>
-    <ion-card>
+    </button>
+    <button ion-item (click)="goToPage('awards')">
       <ion-card-header>
         Premios
-        <ion-card-content>
-          <!--link a la pagina-->
-        </ion-card-content>
       </ion-card-header>
-    </ion-card>
-    <ion-card>
+    </button>
+    <button ion-item (click)="goToPage('calendar')">
       <ion-card-header>
         Calendario
-        <ion-card-content>
-          <!--link a la pagina-->
-        </ion-card-content>
       </ion-card-header>
-    </ion-card>
-    <ion-card>
+    </button>
+    <button ion-item (click)="goToPage('shop')">
       <ion-card-header>
         Tienda
-        <ion-card-content>
-          <!--link a la pagina-->
-        </ion-card-content>
       </ion-card-header>
-    </ion-card>
+    </button>
   </ion-list>
 </ion-content>
 

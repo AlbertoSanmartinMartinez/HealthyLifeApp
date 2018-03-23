@@ -6,6 +6,9 @@ import { SportPage } from '../sport/sport';
 import { NutritionPage } from '../nutrition/nutrition';
 import { HealthPage } from '../health/health';
 
+@IonicPage({
+  name: 'tabspage'
+})
 @Component({
   templateUrl: 'tabs.html',
   selector: 'page-tabs'

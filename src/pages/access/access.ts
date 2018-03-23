@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
-@IonicPage()
+@IonicPage({
+  name: 'access'
+})
 @Component({
   selector: 'page-access',
   templateUrl: 'access.html'
