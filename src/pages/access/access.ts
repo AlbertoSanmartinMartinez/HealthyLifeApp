@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { LoginPage } from './login/login';
+import { RegisterPage } from './register/register';
 
 @IonicPage({
   name: 'access'
@@ -16,11 +18,11 @@ export class AccessPage {
   }
 
   login() {
-    this.navCtrl.push('LoginPage');
+    this.navCtrl.push(LoginPage);
   }
 
   register() {
-    this.navCtrl.push('RegisterPage');
+    this.navCtrl.push(RegisterPage);
   }
 
   facebook() {

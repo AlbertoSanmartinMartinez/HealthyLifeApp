@@ -3,7 +3,9 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 //import { User } from '../../providers/providers';
 //import { MainPage } from '../pages';
 
-@IonicPage()
+@IonicPage({
+  name: 'register'
+})
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html'

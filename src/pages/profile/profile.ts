@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 
 import { AccessPage } from '../access/access';
 import { AwardsPage } from '../awards/awards';
 import { CalendarPage } from '../calendar/calendar';
+import { PersonalInformationPage } from '../personal-information/personal-information';
 import { ShopPage } from '../shop/shop';
-import { PersonalInformationPage } from '../personal-information/personal-information'
 
+@IonicPage({
+  name: 'profile'
+})
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html'
@@ -40,5 +43,6 @@ export class ProfilePage {
       this.navCtrl.push(PersonalInformationPage);
       break;
     }
+
   }
 }

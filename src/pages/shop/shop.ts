@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 
+@IonicPage({
+  name: 'shop'
+})
 @Component({
   selector: 'page-shop',
   templateUrl: 'shop.html'
 })
-export class ShopsPage {
+export class ShopPage {
 
   constructor(public navCtrl: NavController) {
 
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ShopsPage');
+    console.log('ionViewDidLoad ShopPage');
   }
 }

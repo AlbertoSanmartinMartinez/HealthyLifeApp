@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
+import { ShopPage } from './shop';
 import { IonicPageModule } from 'ionic-angular';
-import { PersonalInformationPage } from './personal-information';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
-    PersonalInformationPage,
+    ShopPage
   ],
   imports: [
-    IonicPageModule.forChild(PersonalInformationPage),
+    IonicPageModule.forChild(ShopPage),
     SharedModule
   ],
   exports: [
-    PersonalInformationPage
+    ShopPage
   ]
 })
-export class PersonalInformationPageModule {}
+
+export class ShopPageModule {}
