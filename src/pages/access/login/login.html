@@ -1,19 +1,15 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>{{ 'LOGIN_TITLE' }}</ion-title>
+    <ion-title>{{ 'LOGIN' }}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content>
+<ion-content padding>
   <form (submit)="doLogin()">
     <ion-list>
 
       <ion-item>
-        <ion-label fixed>{{ 'EMAIL' }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="loginData.email" name="email" placeholder="Nombre de usuario o email"></ion-input>
       </ion-item>
 
       <!--
@@ -26,12 +22,11 @@
       -->
 
       <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="loginData.password" name="password" placeholder="Constraseña"></ion-input>
       </ion-item>
 
       <div padding>
-        <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' }}</button>
+        <button ion-button type="submit" color="primary" block>{{ 'ACCEDE' }}</button>
       </div>
 
     </ion-list>

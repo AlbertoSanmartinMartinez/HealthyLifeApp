@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
-import { BlogService } from '../../providers/service';
+import { BlogService } from '../../providers/blog_service';
 
 @IonicPage({
   name: 'home'

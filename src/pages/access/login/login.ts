@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
-//import { User } from '../../providers/providers';
-//import { MainPage } from '../pages';
+import { IonicPage, NavController, LoadingController, ToastController } from 'ionic-angular';
+import { AuthenticationService } from '../../../providers/authenticate_service';
+import { RegisterPage } from '../register/register';
+import { TabsPage } from '../../tabs/tabs';
 
 @IonicPage({
   name: 'login'
@@ -11,44 +12,52 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  // The account fields for the login form.
-  // If you're using the username field with or without email, make
-  // sure to add it to the type
-  /*
-  account: { email: string, password: string } = {
-    email: 'test@example.com',
-    password: 'test'
-  };
-  */
 
-  // Our translated text strings
-  private loginErrorString: string;
+  loading: any;
+  loginData = {usernmae:'', password:''};
+  data: any;
 
   constructor(public navCtrl: NavController,
-    //public user: User,
+    public authenticateService: AuthenticationService,
+    public loadingCtrl: LoadingController,
     public toastCtrl: ToastController) {
-    /*
-    this.translateService.get('LOGIN_ERROR').subscribe((value) => {
-      this.loginErrorString = value;
-    })
-    */
+
   }
 
-  // Attempt to login in through our User service
-  /*
   doLogin() {
-    this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
+    this.showLoader();
+    this.authenticateService.login(this.loginData).then((result) => {
+      this.loading.dismiss();
+      this.data = result;
+      localStorage.setItem('token', this.data.access_token);
+      this.navCtrl.setRoot(TabsPage);
     }, (err) => {
-      this.navCtrl.push(MainPage);
-      // Unable to log in
-      let toast = this.toastCtrl.create({
-        message: this.loginErrorString,
-        duration: 3000,
-        position: 'top'
-      });
-      toast.present();
+      this.loading.dismiss();
+      this.presentToast(err);
     });
   }
-  */
+
+  register() {
+    this.navCtrl.push(RegisterPage);
+  }
+
+  showLoader() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Accediendo...'
+    });
+    this.loading.present();
+  }
+
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom',
+      dismissOnPageChange: true
+    });
+    toast.onDidDismiss(() => {
+      console.log('Dismiss toast');
+    });
+    toast.present();
+  }
 }

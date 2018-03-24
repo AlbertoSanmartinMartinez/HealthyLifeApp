@@ -5,8 +5,9 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HttpModule } from '@angular/http'
-import { BlogService } from '../providers/service'
+import { HttpModule } from '@angular/http';
+import { BlogService } from '../providers/blog_service';
+import { AuthenticationService } from '../providers/authenticate_service';
 
 import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
@@ -19,7 +20,6 @@ import { RegisterPage } from '../pages/access/register/register';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { AwardsPage } from '../pages/awards/awards';
 import { PersonalInformationPage } from '../pages/personal-information/personal-information';
-import { ProfilePage } from '../pages/profile/profile';
 import { ShopPage } from '../pages/shop/shop';
 
 @NgModule({
@@ -60,13 +60,13 @@ import { ShopPage } from '../pages/shop/shop';
     LoginPage,
     RegisterPage,
     PersonalInformationPage,
-    ProfilePage,
     ShopPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BlogService,
+    AuthenticationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

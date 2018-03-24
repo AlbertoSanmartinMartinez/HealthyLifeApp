@@ -1,9 +1,7 @@
+/*
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-/**
- * Api is a generic REST Api handler. Set your API url first.
- */
 @Injectable()
 export class Api {
   url: string = 'https://example.com/api/v1';
@@ -45,3 +43,4 @@ export class Api {
     return this.http.patch(this.url + '/' + endpoint, body, reqOpts);
   }
 }
+*/
