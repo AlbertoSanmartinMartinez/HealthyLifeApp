@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 
 @IonicPage({
-  name: 'sport'
+  name: 'sport',
+  segment: 'sport'
 })
 @Component({
   selector: 'page-sport',

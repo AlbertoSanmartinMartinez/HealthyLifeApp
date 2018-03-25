@@ -2,29 +2,25 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+let urlApi = 'http://127.0.0.1:8000/api/posts/';
+
 @Injectable()
 export class BlogService {
 
-  data: any = null;
+  public posts: any = null;
 
   constructor(private http: Http) {
 
   }
 
   //metodo que devuelve las lista de posts del blog
-  getPostsService() {
-    console.log('llamamos al servicio');
-    var url = 'http://127.0.0.1:8000/api/posts/';
-    //return this.http.get(url).do((res: Response) => console.log(res.json()).map((res: Response) => res.json()).catch(error => console.log(error)));
-    if (this.data) {
-      return Promise.resolve(this.data);
-    }
+  getPosts() {
     return new Promise(resolve => {
-      this.http.get(url)
+      this.http.get(urlApi)
       .map(res => res.json())
       .subscribe(data => {
-        this.data = data.results;
-        resolve(this.data);
+        this.posts = data.results;
+        resolve(this.posts);
       });
     });
   }

@@ -28,7 +28,7 @@ export class AuthenticationService {
     return new Promise((resolve, reject) => {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post(urlApi+'register', JSON.stringify(data), {headers: headers})
+      this.http.post(urlApi+'user/register/', JSON.stringify(data), {headers: headers})
       .subscribe(res => {
         resolve(res.json());
       }, (err) => {

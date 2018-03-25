@@ -20,7 +20,7 @@ export class HomePage {
 
   getPosts() {
     console.log('llamamos a la funcion');
-    this.blogService.getPostsService().then(data => {
+    this.blogService.getPosts().then(data => {
       this.posts = data;
     });
   }

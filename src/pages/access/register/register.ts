@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ToastController, LoadingController, NavParams } from 'ionic-angular';
 import { AuthenticationService } from '../../../providers/authenticate_service';
-import { LoginPage } from '../login/login';
 
 @IonicPage({
   name: 'register'
@@ -12,8 +11,8 @@ import { LoginPage } from '../login/login';
 })
 export class RegisterPage {
 
-  loading: any;
-  registerData = {usernmae:'', password:''};
+  public loading: any;
+  public registerData = {username:'', email:'', password1:'', password2:''};
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -32,10 +31,6 @@ export class RegisterPage {
       this.loading.dismiss();
       this.presentToast(err);
     });
-  }
-
-  login() {
-    this.navCtrl.push(LoginPage);
   }
 
   showLoader() {
