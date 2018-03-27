@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Detalle del Post
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <img src="img/advance-card-bttf.png">
+    <!--
+    Galeria de imágenes
+    https://devdactic.com/ionic-image-gallery-zoom/
+    -->
+    <ion-item>
+      <h2>{{ post?.title }}</h2>
+      <p>{{ post?.author }}</p>
+      <p>{{ post?.content }}</p>
+      <p>{{ post?.creation_date }}</p>
+      <ion-badge item-end>260k</ion-badge>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item *ngFor='let comment of comments'>
+      <p>{{ comment?.title }}</p>
+      <p>{{ comment?.content }}</p>
+      <p>{{ comment?.author }}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>

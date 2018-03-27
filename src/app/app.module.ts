@@ -21,6 +21,8 @@ import { CalendarPage } from '../pages/calendar/calendar';
 import { AwardsPage } from '../pages/awards/awards';
 import { PersonalInformationPage } from '../pages/personal-information/personal-information';
 import { ShopPage } from '../pages/shop/shop';
+import { PostPage } from '../pages/post/post';
+import { CommentPage } from '../pages/comment/comment';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ShopPage } from '../pages/shop/shop';
     RegisterPage,
     PersonalInformationPage,
     ProfilePage,
-    ShopPage
+    ShopPage,
+    PostPage,
+    CommentPage
   ],
   //modules
   imports: [
@@ -60,7 +64,9 @@ import { ShopPage } from '../pages/shop/shop';
     LoginPage,
     RegisterPage,
     PersonalInformationPage,
-    ShopPage
+    ShopPage,
+    PostPage,
+    CommentPage
   ],
   providers: [
     StatusBar,

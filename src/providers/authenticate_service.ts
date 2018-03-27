@@ -7,10 +7,13 @@ let urlApi = 'http://127.0.0.1:8000/api/';
 @Injectable()
 export class AuthenticationService {
 
+  public user: any = null;
+
   constructor(public http: Http) {
 
   }
 
+  //metodo que inicia la sesion un usuario
   login(data) {
     return new Promise((resolve, reject) => {
       let headers = new Headers();
@@ -24,6 +27,7 @@ export class AuthenticationService {
     });
   }
 
+  //metodo que registra a un usuario
   register(data) {
     return new Promise((resolve, reject) => {
       let headers = new Headers();
@@ -37,6 +41,7 @@ export class AuthenticationService {
     });
   }
 
+  //metodo que termina la sesion de un usuario
   logout() {
     return new Promise((resolve, reject) => {
       let headers = new Headers();
@@ -46,6 +51,17 @@ export class AuthenticationService {
         localStorage.clear();
       }, (err) => {
         reject(err);
+      });
+    });
+  }
+
+  //metodo que devuelve un usuario
+  getUser(data) {
+    return new Promise(resolve => {
+      this.http.get(urlApi+'users/'+data)
+      .map(res => res.json())
+      .subscribe(data => {
+        resolve(this.user);
       });
     });
   }

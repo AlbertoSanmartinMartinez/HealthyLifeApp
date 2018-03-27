@@ -1,0 +1,11 @@
+<form [formGroup]="comment" (ngSubmit)="doComment()">
+  <ion-item>
+    <ion-label>Título</ion-label>
+    <ion-input type="text" formControlName="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Commentario</ion-label>
+    <ion-textarea formControlName="content"></ion-textarea>
+  </ion-item>
+  <button ion-button type="submit" [disabled]="!todo.valid">Envíar</button>
+</form>

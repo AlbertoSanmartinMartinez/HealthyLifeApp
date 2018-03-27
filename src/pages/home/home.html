@@ -5,20 +5,24 @@
 </ion-header>
 
 <ion-content padding>
-  <!--<ion-list>-->
   <ion-card *ngFor='let post of posts'>
     <ion-item>
       <ion-avatar item-start>
         <img src="img/marty-avatar.png">
-        <!--imagen de perfil de autor-->
+        <!--imagen de perfil del autor-->
+        <!--link al perfil del autor-->
       </ion-avatar>
-      <h2>{{ post.author}}</h2>
-      <p>{{ post.creation_date}}</p>
+      <h2>{{ post.author }}</h2>
+      <p>{{ post.creation_date }}</p>
     </ion-item>
+    <p>{{ post.title }}</p>
     <img src="img/advance-card-bttf.png">
     <!--imagen de cabecera del post-->
     <ion-card-content>
       <p>{{ post.description }}</p>
+      <button ion-button center clear small (click)="goToPost(post.id)">
+        <div>Leer más</div>
+      </button>
     </ion-card-content>
     <ion-row>
       <ion-col>
@@ -33,12 +37,6 @@
           <div>4 Comments</div>
         </button>
       </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          11h ago
-        </ion-note>
-      </ion-col>
     </ion-row>
   </ion-card>
-  <!--</ion-list>-->
 </ion-content>
